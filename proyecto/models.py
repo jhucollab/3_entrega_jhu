@@ -6,6 +6,7 @@ class Energia(models.Model):
     formula = models.CharField()
     def __str__(self):
         return f"energia= {self.tipo}"
+    imagen = models.ImageField(upload_to='energia', null=True, blank=True)
 #particulas
 class Particula(models.Model):
     carga_electrica = models.CharField(max_length=100)
@@ -13,3 +14,6 @@ class Particula(models.Model):
     def __str__(self):
         return self.carga_electrica 
 # Create your models here. py 
+class ImagenInicio(models.Model):
+    imagen = models.ImageField(upload_to='inicio/')
+

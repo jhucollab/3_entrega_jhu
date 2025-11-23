@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <title>{% block title %}Proyecto jhu{% endblock %}</title>
 </head>
-<body>
-    <header>
-        <h1>Proyecto jhu 🌀</h1>
-        <nav>
-            <a href="{% url 'listado_energia' %}">Energías</a> |
-            <a href="{% url 'listado_particula' %}">Partículas</a> |
-            <a href="{% url 'crear_energia' %}">Nueva Energía</a> |
-            <a href="{% url 'crear_particula' %}">Nueva Partícula</a>
-        </nav>
-        <hr>
-    </header>
 
-    {% block content %}{% endblock %}
+<body style="margin:0; font-family:'Yu Mincho', 'serif'; background:#f6fff6;">
+
+    <header style="background:#3f3bafcb; padding:15px; color:white; text-align:center;">
+        <h1 style="margin:0; font-size:28px;">Proyecto jhu ⛩🀦</h1>
+        
+        <nav style="margin-top:10px;">
+            <a href="{% url 'inicio' %}" style="color:white; margin:0 10px; text-decoration:none;">Inicio</a>
+            <a href="{% url 'listado_energia' %}" style="color:white; margin:0 10px; text-decoration:none;">Energías</a>
+            <a href="{% url 'listado_particula' %}" style="color:white; margin:0 10px; text-decoration:none;">Partículas</a>
+            <a href="{% url 'crear_energia' %}" style="color:white; margin:0 10px; text-decoration:none;">Nueva Energía</a>
+            <a href="{% url 'crear_particula' %}" style="color:white; margin:0 10px; text-decoration:none;">Nueva Partícula</a>
+
+            <span style="margin:0 15px;">|</span>
+            <a href="{% url 'registro' %}" style="color:white; margin:0 10px; text-decoration:none;">Registrarse</a>
+            <a href="{% url 'login' %}" style="color:white; margin:0 10px; text-decoration:none;">Iniciar sesión</a>
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit"
+            style="
+                background:none; 
+                border:none; 
+                color:white; 
+                cursor:pointer; 
+                margin:0 10px; 
+                font-size:16px; 
+                font-family:'Yu Mincho', serif;
+            ">
+        Cerrar sesión
+    </button>
+</form>
+
+            <span style="background:none; border:none; color:white; cursor:pointer; margin:0 10px; font-size:16px;"></span>
+            <a href="{% url 'aboutme' %}" style="color:white; margin:0 10px; text-decoration:none;">About Me</a>
+        </nav>
+     </header>
+
+    <main style="padding:20px;">
+        {% block content %}{% endblock %}
+    </main>
+
 </body>
 </html>
+
+
+

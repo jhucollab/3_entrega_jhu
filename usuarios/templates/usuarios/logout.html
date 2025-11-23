@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Cerrar sesión{% endblock %}
+
+{% block content %}
+
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Cerrar sesión</button>
+</form>
+
+<div style="max-width:420px; margin:auto; padding:25px;
+            background:linear-gradient(135deg, #e6f7ff, #e2e0ff);
+            border-radius:18px; border:2px solid #b5c9ff;
+            box-shadow:0 0 12px rgba(130, 160, 255, 0.25);
+            font-family:'Yu Mincho', serif; color:#374b70;">
+
+    <h2 style="text-align:center; margin-bottom:20px;
+               color:#4d5b9a; text-shadow:0 0 4px rgba(255,255,255,0.7);">
+        🌙 Sesión finalizada
+    </h2>
+
+    <p style="text-align:center; font-size:17px;">
+        Gracias por usar el sistema.<br>
+        またね — ¡hasta pronto!
+    </p>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="{% url 'login' %}"
+           style="padding:10px 20px; background:#9bb7ff;
+                  color:white; border-radius:10px; text-decoration:none;
+                  display:inline-block;">
+            🌌 Volver a iniciar sesión
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+

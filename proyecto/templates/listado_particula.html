@@ -1,14 +1,59 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 {% block content %}
-<h1>Listado particulas</h1>
-<ul>
- {% for particula in particulas %}
-  <li>{{particula}}</li>
-  {% empty %}
-  <li> no particulas registradas</li>
-  {% endfor %}
-</ul>
-<h1>Listado particulas</h1>
-<table>...</table>
+
+<div style="max-width:900px; margin:auto; padding:25px;
+            background:#f3ecff; border-radius:18px;
+            box-shadow:0 0 12px rgba(170, 150, 255, 0.35);
+            border:2px solid #c6b8ff;">
+
+    <h2 style="text-align:center; color:#6a4dbd; font-size:30px;
+               text-shadow:0 0 5px white;">
+        ✿ Listado de Partículas 𖦹 ✿
+    </h2>
+
+    <form method="GET" style="text-align:center; margin-bottom:15px;">
+        <input type="text" name="q" placeholder="Buscar partícula por carga electrica..."
+               style="padding:8px 12px; border-radius:10px; border:1px solid #bdaeff; width:55%;">
+        <button type="submit"
+                style="background:#6a4dbd; color:white; border-radius:10px;
+                       padding:8px 16px; border:none; cursor:pointer;">
+            Buscar 🎐
+        </button>
+    </form>
+
+    <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+        <thead style="background:#dcd3ff;">
+            <tr>
+                <th style="padding:10px;">Nombre</th>
+                <th>Carga eléctrica</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for particula in particulas %}
+            <tr style="background:white; border-bottom:1px solid #dcd3ff;">
+                <td style="padding:10px;">{{ particula.nombre }}</td>
+                <td>{{ particula.carga_electrica }}</td>
+                <td>
+                    <a href="{% url 'editar_particula' particula.id %}"
+                       style="color:#6a4dbd;">Editar</a> |
+                    <a href="{% url 'eliminar_particula' particula.id %}"
+                       style="color:#402082;">Eliminar</a>
+                </td>
+            </tr>
+
+            {% empty %}
+            <tr>
+                <td colspan="3" style="text-align:center; padding:15px;">
+                    ✧ No se ha registrado ninguna partícula ✧
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
+
+

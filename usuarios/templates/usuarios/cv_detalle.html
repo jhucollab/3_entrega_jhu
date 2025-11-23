@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="max-width:700px; margin:auto; padding:25px;
+            background:#fff7fb; border-radius:18px;
+            border:2px solid #e1c9ff; box-shadow:0 0 12px rgba(80, 40, 120, 0.3);">
+
+    <h2 style="text-align:center; color:#5e4a92;">
+        🎐 Mi CV ✿
+    </h2>
+
+    {% if object %}
+        <p><strong>Descripción:</strong> {{ object.descripcion }}</p>
+
+        <div style="text-align:center; margin-top:20px;">
+            <a href="{% url 'editar_cv' object.pk %}" style="
+                background:#4e3e7a; padding:10px 20px; color:white;
+                border-radius:10px; text-decoration:none; margin-right:10px;">
+                Editar 📄
+            </a>
+
+            <a href="{% url 'borrar_cv' object.pk %}" style="
+                background:#c74356; padding:10px 20px; color:white;
+                border-radius:10px; text-decoration:none;">
+                Eliminar 🗑️
+            </a>
+        </div>
+
+    {% else %}
+        <p>No tienes un CV creado todavía.</p>
+
+        <div style="text-align:center;">
+            <a href="{% url 'crear_cv' %}" style="
+                background:#4e3e7a; padding:10px 20px; color:white;
+                border-radius:10px; text-decoration:none;">
+                Crear mi CV ✨
+            </a>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+

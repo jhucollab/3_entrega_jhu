@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="about-container">
+
+    <h1 class="titulo-jp">私について — About Me, jhu</h1>
+
+    <div class="card">
+        <p>
+            hola <strong>{{ user.username }}</strong> 🌸  
+            te ha gustado mi pag web?
+            me gusta programar para crear cosas bonitas y aprender.
+            me interesan las galaxias, estrellas y ciencia.
+            gracias a mis papas por apoyarme en mis proyectos, espero y esten orgullosos de mi. 
+        </p>
+        <p>
+            Puedes editar tus datos, cambiar contraseña o personalizar tu perfil desde aquí.
+        </p>
+
+        <a href="{% url 'ver_cv' %}" class="btn">Ver mi CV</a>
+    </div>
+
+</div>
+
+<style>
+.about-container {
+    margin-top: 40px;
+    text-align: center;
+    animation: fade 1.5s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-jp {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff8bb3;
+    text-shadow: 0 0 8px #ffc0d7;
+}
+
+.card {
+    margin: 0 auto;
+    width: 60%;
+    background: rgba(255, 240, 248, .9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 180, 220, .4);
+    color: #6a2a3c;
+}
+
+.btn {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff88aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #ff6d99;
+}
+</style>
+
+{% endblock %}

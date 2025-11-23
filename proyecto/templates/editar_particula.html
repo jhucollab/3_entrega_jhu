@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="max-width:600px; margin:auto; padding:25px;
+            background:#faf0ff; border-radius:18px;
+            border:2px solid #d6caff; box-shadow:0 0 12px rgba(60, 40, 120, 0.4);">
+
+    <h1 style="text-align:center; color:#5d4fa3;">
+        🏮 Editar Partícula ✿
+    </h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ particula.nombre }}" style="width:100%; padding:8px; margin:8px 0; border-radius:8px; border:1px solid #ccbbee;">
+
+        <label>Carga eléctrica:</label>
+        <input type="number" step="any" name="carga_electrica" value="{{ particula.carga_electrica }}" style="width:100%; padding:8px; margin:8px 0; border-radius:8px; border:1px solid #ccbbee;">
+
+        <button type="submit" style="
+            background:#4e3e7a; color:white; padding:10px; border:none;
+            border-radius:10px; width:100%; font-size:16px; cursor:pointer;">
+            Guardar Cambios 🌸
+        </button>
+    </form>
+
+</div>
+
+{% endblock %}
+

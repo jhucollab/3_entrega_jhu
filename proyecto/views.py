@@ -1,12 +1,20 @@
 from django.shortcuts import render
 from .models import Energia, Particula
-#listado energia
+#listado energia(mostrar)
 def listado_energia(request):
-    energias = Energia.objects.all()
+    query = request.GET.get("q")
+    if query:
+        energias = Energia.objects.filter(tipo__icontains=query)
+    else:
+        energias = Energia.objects.all()
     return render(request, "listado_energia.html", {"energias": energias})
 #listado particula
 def listado_particulas(request):
-    particulas = Particula.objects.all()
+    query = request.GET.get("q")
+    if query:
+        particulas = Particula.objects.filter(carga_electrica__icontains=query)
+    else:
+        particulas = Particula.objects.all()
     return render(request, "listado_particula.html", {"particulas": particulas})
 
 # Create your views here.
@@ -32,3 +40,64 @@ def crear_particula(request):
     else:
         form = ParticulaForm()
     return render(request, "crear_particula.html", {"form": form})
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Energia, Particula
+#editar
+def editar_energia(request, id):
+    energia = get_object_or_404(Energia, id=id)
+    if request.method == 'POST':
+        energia.nombre = request.POST.get('nombre')
+        energia.formula = request.POST.get('formula')
+        energia.save()
+        return redirect('listado_energia')
+    return render(request, 'editar_energia.html', {'energia': energia})
+def editar_particula(request, id):
+    particula = get_object_or_404(Particula, id=id)
+    if request.method == 'POST':
+        particula.nombre = request.POST.get('nombre')
+        particula.carga_electrica = request.POST.get('carga electrica')
+        particula.save()
+        return redirect('listado_particula')
+    return render(request, 'editar_particula.html', {'particula': particula})
+#eliminar
+def eliminar_energia(request, id):
+    energia = get_object_or_404(Energia, id=id)
+    if request.method == 'POST':
+        energia.delete()
+        return redirect('listado_energia')
+    return render(request, 'eliminar_energia.html', {'energia': energia})
+def eliminar_particula(request, id):
+    particula = get_object_or_404(Particula, id=id)
+    if request.method == 'POST':
+        particula.delete()
+        return redirect('listado_particula')
+    return render(request, 'eliminar_particula.html', {'particula': particula})
+from .mixins import SoloLogueadosMixin
+def home(request):
+    return render(request, 'home.html')
+def aboutme(request):
+    return render(request, 'aboutme.html')
+from django.views.generic import ListView
+from django.contrib import messages
+class EnergiaListView(SoloLogueadosMixin, ListView):
+    model = Energia
+    template_name = 'listado_energia.html'
+    def get_queryset(self):
+        q = self.request.GET.get('q')
+        qs = super().get_queryset()
+        if q:
+            qs = qs.filter(nombre__incontains=q)
+            if not qs:
+                messages.info(self.request, 'no hay resultados')
+                return qs
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+@login_required
+def pag_secreta(request):
+    return render(request, "usuarios/pag_secreta.html")
+
+from django.shortcuts import render
+def inicio(request):
+    return render(request, "inicio.html")
+
+          

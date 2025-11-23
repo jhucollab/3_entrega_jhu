@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Proyecto jhu{% endblock %}
+
+{% block content %}
+
+<div style="max-width: 700px; margin:auto; 
+            background:#f3e8ff; padding:25px; 
+            border:2px solid #6b4fa8; border-radius:15px;
+            font-family:'Yu Mincho', serif;">
+
+    <h2 style="text-align:center; color:#4c3e91; margin-bottom:20px;">
+         bienvenido a mi proyecto fisica, ciencias 𓏲 ๋࣭ ࣪ ˖🎐
+    </h2>
+
+    <p style="font-size:17px; color:#3b2f73; line-height:1.6;">
+        desde aqui puedes ver funciones de mi Proyecto.
+    </p>
+
+    <hr style="border:0; border-top:1px solid #6b4fa8; margin:20px 0;">
+
+    <h3 style="color:#4c3e91;">fisica, ciencias</h3>
+    <ul style="list-style:none; padding-left:0; line-height:1.8;">
+
+        <li>
+            <a href="{% url 'listado_energia' %}" 
+               style="background:#d8c8ff; color:#3a2d6f; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               ➡️ Listado de Energias
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'listado_particula' %}" 
+               style="background:#d8c8ff; color:#3a2d6f; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               ➡️ Listado de Particulas
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'crear_energia' %}" 
+               style="background:#e2d4ff; color:#3a2d6f; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               ➕ Crear nueva energia
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'crear_particula' %}" 
+               style="background:#e2d4ff; color:#3a2d6f; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               ➕ Crear nueva particula
+            </a>
+        </li>
+    </ul>
+
+    <hr style="border:0; border-top:1px solid #6b4fa8; margin:20px 0;">
+
+    <h3 style="color:#4c3e91;">ingreso</h3>
+    <ul style="list-style:none; padding-left:0; line-height:1.8;">
+
+        <li>
+            <a href="{% url 'login' %}" 
+               style="background:#ffd8fc; color:#50306b; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               🔑 Iniciar sesion
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'registro' %}" 
+               style="background:#ffd8fc; color:#50306b; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               📝 Registrarse
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'logout' %}" 
+               style="background:#ffd8fc; color:#50306b; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               🚪 Cerrar sesion
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'aboutme' %}" 
+               style="background:#ffe6ff; color:#50306b; padding:8px 15px; border-radius:10px; text-decoration:none;">
+               🌸 About Me
+            </a>
+        </li>
+    </ul>
+
+    <hr style="border:0; border-top:1px solid #6b4fa8; margin:20px 0;">
+    
+    <div style="text-align:center;">
+        <p style="color:#3b2f73;">ありがとう — gracias por visitar mi proyecto </p>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+

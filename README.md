@@ -1,15 +1,38 @@
-3 entrega(jhu)
-# 3 ENTREGA JHU(energias,particulas)
-# listado=
-# tiene = 2 modelos(Energia, Particula), con vistas y templates.
-# 1 elem. = registra, muestra tipos de energia
-# 2 elem. = registra, muestra tipos de particulas
-# navega entre listas(URLS)
-# orden ejecucion= 1. entorno virtual(bash), 2 pip install -r requirements.txt
-#                  3. migraciones(python manage.py makemigrations, python manage.py migrate)
-#                  4. python manage.py runserver 5. acceder= http://127.0.0.1:8000/energia/
-<<<<<<< HEAD
-#                  6. http://127.0.0.1:8000/particula/
-=======
-#                  6. http://127.0.0.1:8000/particula/
->>>>>>> ecd2cf82b2ce388f131713930dd2781fc07f218d
+entrega final, jhu
+ 1. gestion de Energias
+
+Crear, ver, editar, borrar y buscar energias.
+
+Formularios con estilo japonés (sakura, tonos lilas).
+
+Listados ordenados, nombre y formula.
+
+ 2. gestion de Particulas
+
+CRUD completo (crear, ver, editar, eliminar) y buscar particulas.
+
+listado con nombre y carga electrica de particulas
+
+ 3. registro de Usuarios
+
+Registro, login y logout.
+
+cada usuario tiene su propio CV, permite ingresar descripcion.(desde aboutme)
+
+vistas para cv:
+
+cv_detalle(editar descripc.)
+
+cv_form(crear cv)
+
+cv_borrar(borrar cv)
+
+ 4. navegacion
+
+barra superior con acceso a inicio(tambien tiene links a los urls), Energias, Particulas, agregr energia y particula, registrarse(si no ha iniciado sesion), iniciar sesion(lleva a pag_secreta), cerrar sesion(lleva a inicio) y aboutme(permite editar, eliminar o crear su cv).
+
+diseño japones variado
+
+ 5. Seguridad, autenticacion
+LoginRequiredMixin
+Control de acceso para que cada usuario gestione unicamente su informacion.

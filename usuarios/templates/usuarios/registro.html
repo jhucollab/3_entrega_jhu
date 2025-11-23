@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+
+<div style="max-width:450px; margin:auto; padding:25px;
+            background:linear-gradient(135deg, #ffe9fa, #e8d4ff);
+            border-radius:18px; border:2px solid #e6b2ff;
+            box-shadow:0 0 12px rgba(230, 140, 255, 0.25);
+            font-family:'Yu Mincho', serif; color:#5a2b60;">
+
+    <h2 style="text-align:center; margin-bottom:20px; 
+               color:#7a4aa1; text-shadow:0 0 4px rgba(255,255,255,0.8);">
+        🌸 登録 — Crear cuenta
+    </h2>
+
+    <form method="POST" style="font-size:17px;">
+        {% csrf_token %}
+
+        <div style="line-height:1.8; color:#4e2e5c;">
+            {{ form.as_p }}
+        </div>
+
+        <button type="submit"
+                style="padding:10px; width:100%; margin-top:10px;
+                       border:none; border-radius:10px;
+                       background:#d7a6ff; color:white;
+                       font-size:16px;">
+            ✨ Registrarse
+        </button>
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+
+
