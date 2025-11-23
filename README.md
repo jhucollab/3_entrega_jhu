@@ -19,7 +19,7 @@ Registro, login y logout.
 
 cada usuario tiene su propio CV, permite ingresar descripcion.(desde aboutme)
 
-vistas para cv:
+# 4 vistas para cv: 🏮
 
 cv_detalle(editar descripc.)
 
@@ -27,12 +27,16 @@ cv_form(crear cv)
 
 cv_borrar(borrar cv)
 
-# 4. navegacion 🏮
+imagen = en editar, usuario puede agregar imagenes en su cv.(agrege 1 imagen en mi cv)
+
+# 5. navegacion 🏮
 
 barra superior con acceso a inicio(tambien tiene links a los urls), Energias, Particulas, agregr energia y particula, registrarse(si no ha iniciado sesion), iniciar sesion(lleva a pag_secreta), cerrar sesion(lleva a inicio) y aboutme(permite editar, eliminar o crear su cv).
 
 diseño japones variado
 
-# 5. Seguridad, autenticacion 🏮
+# 6. Seguridad, autenticacion 🏮
 LoginRequiredMixin
 Control de acceso para que cada usuario gestione unicamente su informacion.
+# http://127.0.0.1:8000/ (pag web)
+# link a video(drive)= https://docs.google.com/videos/d/1SXH7K7zDkQ8gdfIwRp1dSfn1-L5IrBtiBfq4wXbcRIE/edit?usp=sharing 

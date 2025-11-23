@@ -15,5 +15,5 @@ class Particula(models.Model):
         return self.carga_electrica 
 # Create your models here. py 
 class ImagenInicio(models.Model):
-    imagen = models.ImageField(upload_to='inicio/')
+    foto = models.ImageField(upload_to='inicio/')
 

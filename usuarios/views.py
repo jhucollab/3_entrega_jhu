@@ -84,7 +84,6 @@ class EditarCV(LoginRequiredMixin, UpdateView):
     model = CV
     form_class = CVForm
     template_name = "usuarios/cv_form.html"
-
     def get_queryset(self):
         return CV.objects.filter(usuario=self.request.user)
 
