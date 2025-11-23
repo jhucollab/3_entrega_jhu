@@ -1,5 +1,5 @@
-entrega final, jhu
- 1. gestion de Energias
+## ENTREGA FINAL JHU
+# 1. gestion de Energias 🏮
 
 Crear, ver, editar, borrar y buscar energias.
 
@@ -7,13 +7,13 @@ Formularios con estilo japonés (sakura, tonos lilas).
 
 Listados ordenados, nombre y formula.
 
- 2. gestion de Particulas
+# 2. gestion de Particulas 🏮
 
 CRUD completo (crear, ver, editar, eliminar) y buscar particulas.
 
 listado con nombre y carga electrica de particulas
 
- 3. registro de Usuarios
+# 3. registro de Usuarios 🏮
 
 Registro, login y logout.
 
@@ -27,12 +27,12 @@ cv_form(crear cv)
 
 cv_borrar(borrar cv)
 
- 4. navegacion
+# 4. navegacion 🏮
 
 barra superior con acceso a inicio(tambien tiene links a los urls), Energias, Particulas, agregr energia y particula, registrarse(si no ha iniciado sesion), iniciar sesion(lleva a pag_secreta), cerrar sesion(lleva a inicio) y aboutme(permite editar, eliminar o crear su cv).
 
 diseño japones variado
 
- 5. Seguridad, autenticacion
+# 5. Seguridad, autenticacion 🏮
 LoginRequiredMixin
 Control de acceso para que cada usuario gestione unicamente su informacion.
