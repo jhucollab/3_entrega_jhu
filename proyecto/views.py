@@ -55,7 +55,7 @@ def editar_particula(request, id):
     particula = get_object_or_404(Particula, id=id)
     if request.method == 'POST':
         particula.nombre = request.POST.get('nombre')
-        particula.carga_electrica = request.POST.get('carga electrica')
+        particula.carga_electrica = request.POST.get('carga_electrica')
         particula.save()
         return redirect('listado_particula')
     return render(request, 'editar_particula.html', {'particula': particula})
